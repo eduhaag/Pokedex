@@ -18,12 +18,13 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
 
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
 
-    pokemon.abilities = pokeDetail.abilities.map(({ability})=> upperCaseFirstLetter(ability.name)).join('')
+    pokemon.abilities = pokeDetail.abilities.map(({ability})=> upperCaseFirstLetter(ability.name)).join(', ')
 
     pokemon.height = pokeDetail.height / 10 + ' m'
     pokemon.stats = pokeDetail.stats.map((statistic)=>{
+        const statName = statistic.stat.name==='special-attack' ? 'Sp. Attack' : statistic.stat.name === 'special-defense' ? 'Sp. Defense' : statistic.stat.name
         return {
-            statName: statistic.stat.name,
+            statName: upperCaseFirstLetter(statName),
             statValue: statistic.base_stat
         }
     })
