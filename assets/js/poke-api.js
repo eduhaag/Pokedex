@@ -1,6 +1,10 @@
 
 const pokeApi = {}
 
+function upperCaseFirstLetter (word) {
+    return word[0].toUpperCase() + word.substring(1)
+}
+
 function convertPokeApiDetailToPokemon(pokeDetail) {
     const pokemon = new Pokemon()
     pokemon.number = pokeDetail.id
@@ -14,11 +18,24 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
 
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
 
+    pokemon.abilities = pokeDetail.abilities.map(({ability})=> upperCaseFirstLetter(ability.name)).join('')
+
+    pokemon.height = pokeDetail.height / 10 + ' m'
+    pokemon.stats = pokeDetail.stats.map((statistic)=>{
+        return {
+            statName: statistic.stat.name,
+            statValue: statistic.base_stat
+        }
+    })
+
+    pokemon.weight = pokeDetail.weight / 10 + ' kg'
+    
+
     return pokemon
 }
 
 pokeApi.getPokemonDetail = (pokemon) => {
-    return fetch(pokemon.url)
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
         .then((response) => response.json())
         .then(convertPokeApiDetailToPokemon)
 }

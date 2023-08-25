@@ -1,0 +1,116 @@
+.modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+
+  background-image: url('/assets/img/pokeball.svg');
+  background-repeat: no-repeat;
+  background-position: 130px 50px;
+}
+
+.modal-header {
+  display: grid;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.modal-header i {
+  justify-self: end;
+  font-size: 1.5rem;
+}
+
+.modal-title {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.modal-title h3 {
+  font-size: 2rem;
+}
+
+.modal-title span {
+  font-size: 1.5rem;
+}
+
+.modal-types {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin-top: .5rem;
+  gap: .25rem
+}
+
+.modal-types li{
+  padding: .25rem .5rem;
+  border-radius: 16px;
+  filter: brightness(1.1);
+}
+
+.modal-details{
+  height: 425px;
+  background-color: #fff;
+  border-radius: 30px 30px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+.modal-details img {
+  height: 150px;
+  margin-top: -120px;
+}
+
+.modal-info, .modal-info table, .modal-info tbody{
+  width: 100%;
+}
+
+.modal-info {
+  padding: 0 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.modal-info table {
+  border-collapse: collapse;
+}
+
+.info-table tr {
+  font-size: 1.1rem;
+}
+
+.info-table tr:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.modal-info td:first-child {
+  width: 35%;
+  color: #555;
+}
+
+.modal-info tr:not(:first-child) td{
+  padding-top: 1rem;
+}
+
+.stats {
+  margin-top: 1.5rem;
+}
+
+.stats table {
+  margin-top: .5rem;
+}
+
+.stats  td:nth-child(2){
+  width: 10%;
+}
+
+.stats meter{
+  width: 100%;
+}
