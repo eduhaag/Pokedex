@@ -48,7 +48,7 @@ Para executar o projeto, você vai precisar ter instalado o [Git](https://git-sc
 # Clone o repositório
 $ git clone git@github.com:eduhaag/Pokedex.git
 ```
-Agora basta abrir o arquivo *index.html* no navegador de sua preferência.
+Agora rodar a aplicação com algum servidor web de sua preferência como o [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) ou o [http-server](https://github.com/http-party/http-server)
 
 
 ## 🛠️ Tecnologias
